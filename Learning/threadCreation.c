@@ -20,7 +20,7 @@ int main(){
     // pthread_self() returns the thread ID of the calling thread.
     printf("Thread ID excuting the main function before thread creation is : %ld\n", pthread_self());
 
-    // pthread_t is a data type used to uniquely identify a thread (thread ID)
+    // pthread_t is a data type used to uniquely identify a thread (thread indetifer not thread ID)
     pthread_t thread; 
     int num = 5;
 
