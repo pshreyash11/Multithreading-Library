@@ -11,6 +11,18 @@
 // lets first have size of stack that we are going to give to child process.
 #define SIZE_OF_STACK 1024*1024
 
+// Functio prototype for the clone system call.
+// int clone(int (*fn)(void *), void *child_stack, int flags, void *arg, 
+//           void *parent_tid, void *tls, void *child_tid);
+Here are the details about it.
+// fn:	Function that the new process/thread will execute.
+// child_stack:	Stack memory for the child process (must be manually allocated).
+// flags:	Determines resource sharing (e.g., memory, file descriptors).
+// arg:	Argument to pass to fn.
+// parent_tid:	Used for thread ID sharing (CLONE_PARENT_SETTID).
+// tls:	Used for setting up Thread-Local Storage (CLONE_SETTLS).
+// child_tid:	Used for setting the thread ID in the child (CLONE_CHILD_SETTID).
+
 // WHAT CLONE SYS CALL DOES ? - It creates a new child process, in addition to that it allows us to share memory between parent and child process.
 // It is similar to fork() but it allows us to share memory between parent and child process.
 
